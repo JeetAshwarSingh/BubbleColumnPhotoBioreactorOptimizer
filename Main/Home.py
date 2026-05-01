@@ -51,3 +51,9 @@ st.write(
 )
 st.header(":blue[CITATION]",divider="blue")
 st.markdown(':grey[Hector Ricardo Hernandez-de Leon, Julio Cesar Martinez-Morgan, Jose Armando Fragoso-Mandujano, Hector Rodriguez-Rangel, Leonel Ernesto Amabilis-Sosa, Sheyla Karina Flores-Guirao,A comprehensive dataset of biomass and critical variables for Verrucodesmus verrucosus culture in bubble column photobioreactors,Data in Brief,Volume 62,2025,112003,ISSN 2352-3409 (https://www.sciencedirect.com/science/article/pii/S2352340925007279)]')
+import os
+from pathlib import Path
+
+st.write("CWD:", os.getcwd())
+st.write("Script dir:", Path(__file__).parent)
+st.write("Files here:", os.listdir(Path(__file__).parent))
