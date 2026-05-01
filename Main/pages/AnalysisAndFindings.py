@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 from pathlib import Path
-os.chdir(Path(__file__).parent)
+os.chdir(Path(__file__).parent.parent)
 st.title("DATA ANALYSIS")
 st.header(":blue[PRODUCTION OF BIOMASS]",divider="blue")
 st.write('The correlation analysis highlights that biomass is strongly influenced by key biochemical variables in the system. It shows a very strong negative correlation with nitrate (NO₃) (-0.97), indicating that as biomass increases, nitrate concentration decreases due to nutrient consumption by the growing microalgae. Similarly, biomass has a strong negative relationship with oxygen (O₂ gas) (-0.98) and carbon dioxide (CO₂ gas) (-0.95), reflecting active metabolic processes where gas exchange is closely tied to growth.')
