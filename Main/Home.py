@@ -37,11 +37,11 @@ df1 = pd.DataFrame(data)
 st.dataframe(df1)
 st.header(":blue[ABOUT THE BIOREACTOR]",divider="blue")
 st.text('A bubble column photobioreactor (BCPR) is a vertical, cylindrical vessel used to cultivate microalgae by feeding gas into the bottom, promoting mixing and mass transfer through bubble flow. ')
-st.image('images/BubbleColumnBioreactor.jpg',width=700)
+st.image('BubbleColumnBioreactor.jpg',width=700)
 st.text('It has a simple design with an aspect ratio (height-to-diameter) usually ranging between 2 to 6, often using a sparger at the base to control bubble size.')
 st.text('Uses upward gas flow for mixing, eliminating the need for mechanical agitation, diameter is often kept below 20 cm to minimise mutual shading and ensure light penetrates all cells.')
 st.header(":blue[ML ALGORITHMS IMPLEMENTED ]",divider="blue")
-st.image("images/randomForestImage.png")
+st.image("randomForestImage.png")
 st.write(
     "In this project, I implemented three machine learning models: Linear Regression, "
     "XGBoost, and Random Forest. Among these, the Random Forest model delivered the best performance. "
