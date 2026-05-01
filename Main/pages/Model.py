@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import os
 from pathlib import Path
-os.chdir(Path(__file__).parent)
+os.chdir(Path(__file__).parent.parent)
 with open('model.pkl', 'rb') as f:
     loaded_model = pickle.load(f)
 st.title("MODEL EVALUATION")
