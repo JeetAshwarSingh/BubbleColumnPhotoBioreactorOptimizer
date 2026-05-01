@@ -3,14 +3,8 @@ import pandas as pd
 st.title("BIOPRODUCTION OPTIMIZER")
 import os
 from pathlib import Path
-import os
-from pathlib import Path
 
-# Make CWD the folder where this script lives
 os.chdir(Path(__file__).parent)
-st.write("CWD:", os.getcwd())
-st.write("Script dir:", Path(__file__).parent)
-st.write("Files here:", os.listdir(Path(__file__).parent))
 
 st.header(":blue[ACKNOWLEDGEMENT]",divider="blue")
 st.write('This project showcases my work in Industrial Biotechnology, carried out during my 4th semester (2026) under the guidance of [Dr Prangya Ranjan Rout](https://departments.nitj.ac.in/dept/bt/Faculty/6430447538bff038a7808ff4).')
