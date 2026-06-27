@@ -211,7 +211,7 @@ Multiple regression models were evaluated for predicting biomass concentration. 
 
 ### Predicted vs. Actual Biomass
 
-![Fitting Plot](images/FittingPlot.png)
+![Fitting Plot](Main/images/FittingPlot.png)
 
 The fitting plot compares predicted biomass values against experimentally observed measurements. The close agreement between predictions and actual values demonstrates the model's ability to accurately capture the underlying relationship between environmental variables and biomass production across the dataset.
 
