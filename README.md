@@ -1,74 +1,206 @@
-BubbleColumnPhotoBioreactorOptimizer
+# BubbleColumnPhotoBioreactorOptimizer
 
-In-depth data analysis, machine learning modeling, and optimization of microalgal growth in bubble column photobioreactors — achieving state-of-the-art predictive performance on a newly published dataset.
+Machine learning, exploratory data analysis, and optimization of **microalgal biomass prediction** in **bubble column photobioreactors (BCPRs)**, achieving **state-of-the-art predictive performance** on a newly published experimental dataset.
 
-Overview
-This repository contains all files required to reproduce the experiment on bubble column photobioreactor (BCPR) data for cultivating the microalgae Verrucodesmus verrucosus. It covers the complete workflow from raw data exploration to machine learning model training and evaluation.
+---
 
-The study is based on the research article:
-"A comprehensive dataset of biomass and critical variables for Verrucodesmus verrucosus culture in bubble column photobioreactors"
-Published by Elsevier, 22 August 2025
-In addition to reproducing baseline findings, this project identifies new patterns and delivers improved ML model performance compared to previously reported results.
+## Overview
 
-About the Dataset
-The dataset is derived from controlled cultivation experiments of Verrucodesmus verrucosus grown in a bubble column photobioreactor using BG-11 medium.
+This repository contains the complete workflow for analyzing and modeling biomass production in **Verrucodesmus verrucosus** cultivated in a **Bubble Column Photobioreactor (BCPR)**.
 
-Experimental Conditions:
-Inoculum cell density: 1 × 10⁶ cells/mL
-Light cycle: 12:12 (light:dark)
-Light intensity: 2000 lux
-LED illumination range: 450–700 nm
-Reactor volume: 2.25 L
-pH range maintained: 7–9
-Biomass measurement: Dry weight method (filtered and dried at 75 °C)
+The project includes:
 
-About the Bubble Column Photobioreactor
-A bubble column photobioreactor (BCPR) is a vertical, cylindrical vessel designed to cultivate microalgae through bottom-fed gas flow, enabling efficient mixing and mass transfer without mechanical agitation.
+* Exploratory Data Analysis (EDA)
+* Feature engineering
+* Correlation analysis
+* Biological interpretation of experimental variables
+* Machine learning model development
+* Model evaluation and comparison
 
-Key Design Features:
-Simple cylindrical geometry with an aspect ratio (height-to-diameter) typically between 2 and 6
-Uses a sparger at the base to control bubble size and distribution
-Upward gas flow provides mixing, eliminating the need for mechanical stirrers
-Diameter is generally kept below 20 cm to minimize mutual shading and ensure light penetration to all cells
+Beyond reproducing the original study, this work uncovers additional biological insights and achieves improved predictive performance over previously reported machine learning benchmarks.
 
-Key Findings & Biological Insights
-Correlation Analysis — What Drives Biomass?
-Variable        	Correlation with Biomass	Relationship
-NO₃             	−0.97                  	Strong negative
-O₂ Gas          	−0.98                  	Strong negative
-CO₂ Gas         	−0.95                  	Strong negative
-Conductivity    	+0.81                  	Strong positive
-pH              	+0.78                  	Strong positive
-Temperature     	+0.31                  	Moderate positive
-Irradiance      	+0.19                  	Weak positive
+---
 
-Effect of Nitrate (NO₃)
-Nitrate shows the strongest negative correlation with biomass (−0.965), making it the primary limiting nutrient in this system.
-NO₃ serves as the principal nitrogen source for Verrucodesmus verrucosus, essential for protein synthesis, chlorophyll formation, and cell growth
-As biomass increases, NO₃ concentration decreases sharply, reflecting active and efficient nutrient uptake by the growing microalgae
-This pattern is consistent with classical nitrogen-limited microalgal growth dynamics
+## Research Background
 
-Effect of pH
-Biomass shows a strong positive correlation with pH (0.78), suggesting that slightly alkaline conditions favor growth
-The pH range of 7–9 maintained in this study is generally optimal for Verrucodesmus verrucosus, keeping enzyme activity and metabolic processes stable
-Cluster 1 in the dataset particularly highlights higher biomass concentrations at elevated pH, indicating robust growth under favorable alkaline conditions
+This project is based on the Elsevier Data in Brief publication:
 
-Effect of Temperature
-Temperature shows only a moderate positive correlation (0.31) with biomass
-The variation in temperature within the dataset is not drastic enough to cause a significant change in growth or biomass production
-This suggests temperature acted as a supportive, stable background variable rather than a growth-limiting factor in this experimental setup
+> **"A comprehensive dataset of biomass and critical variables for *Verrucodesmus verrucosus* culture in bubble column photobioreactors"**
 
-Gas Exchange (O₂ and CO₂)
-O₂ Gas (−0.98) and CO₂ Gas (−0.95) both show strong negative correlations with biomass
-This directly reflects active photosynthetic metabolism: as microalgae grow, they consume CO₂ and produce O₂, altering gas concentrations measurably
-These variables serve as strong indirect indicators of biological activity and culture health
+**Published:** 22 August 2025
 
-Machine Learning Models
-Three regression models were implemented and evaluated for predicting biomass concentration:
-The Random Forest model delivered the best performance, achieving an R² of 0.986 — representing improved results over previously reported benchmarks for this dataset.
+The dataset consists of controlled cultivation experiments performed in a laboratory-scale bubble column photobioreactor.
 
-If you use this work or the dataset, please cite the original article:
-"A comprehensive dataset of biomass and critical variables for Verrucodesmus verrucosus culture in bubble column photobioreactors", Elsevier, 22 August 2025.
+---
+
+## About the Dataset
+
+The dataset records biomass production together with environmental and operational variables influencing microalgal growth.
+
+### Experimental Conditions
+
+| Parameter            | Value                      |
+| -------------------- | -------------------------- |
+| Organism             | *Verrucodesmus verrucosus* |
+| Medium               | BG-11                      |
+| Initial Cell Density | 1 × 10⁶ cells/mL           |
+| Light Cycle          | 12 h Light / 12 h Dark     |
+| Light Intensity      | 2000 lux                   |
+| LED Spectrum         | 450–700 nm                 |
+| Reactor Volume       | 2.25 L                     |
+| pH Range             | 7–9                        |
+| Biomass Measurement  | Dry weight (75°C)          |
+
+---
+
+## About Bubble Column Photobioreactors
+
+A **Bubble Column Photobioreactor (BCPR)** is a vertical cylindrical reactor designed for cultivating photosynthetic microorganisms using gas bubbling instead of mechanical agitation.
+
+### Key Design Features
+
+* Vertical cylindrical geometry
+* Aspect ratio typically between **2:1 and 6:1**
+* Bottom-mounted sparger for controlled bubble generation
+* Gas-induced mixing without mechanical stirrers
+* Reactor diameter generally kept below **20 cm** to maximize light penetration and minimize self-shading
+
+These characteristics make BCPRs energy-efficient and well suited for laboratory and industrial microalgae cultivation.
+
+---
+
+## Exploratory Data Analysis
+
+The project investigates how environmental variables influence biomass production through statistical analysis and visualization.
+
+### Correlation with Biomass
+
+| Variable     | Correlation | Interpretation    |
+| ------------ | ----------: | ----------------- |
+| NO₃          |       -0.97 | Strong negative   |
+| O₂ Gas       |       -0.98 | Strong negative   |
+| CO₂ Gas      |       -0.95 | Strong negative   |
+| Conductivity |       +0.81 | Strong positive   |
+| pH           |       +0.78 | Strong positive   |
+| Temperature  |       +0.31 | Moderate positive |
+| Irradiance   |       +0.19 | Weak positive     |
+
+---
+
+## Biological Insights
+
+### Nitrate (NO₃)
+
+Nitrate exhibits the strongest negative correlation with biomass (**−0.97**), indicating that nitrogen availability is the primary limiting nutrient during cultivation.
+
+As biomass increases, nitrate concentration decreases rapidly due to active nutrient uptake for protein synthesis, chlorophyll production, and cellular growth. This behavior is consistent with classical nitrogen-limited microalgal growth.
+
+---
+
+### pH
+
+Biomass shows a strong positive relationship with pH (**+0.78**).
+
+The maintained pH range of **7–9** provides favorable conditions for enzymatic activity and photosynthetic metabolism. Higher biomass concentrations are consistently observed under slightly alkaline conditions.
+
+---
+
+### Temperature
+
+Temperature demonstrates only a moderate positive correlation (**+0.31**).
+
+Within the experimental range, temperature remained relatively stable and therefore acted as a supporting environmental factor rather than a major growth-limiting variable.
+
+---
+
+### Gas Exchange
+
+Both oxygen and carbon dioxide exhibit strong negative correlations with biomass.
+
+| Variable | Correlation |
+| -------- | ----------: |
+| O₂ Gas   |       -0.98 |
+| CO₂ Gas  |       -0.95 |
+
+These trends reflect active photosynthetic metabolism:
+
+* CO₂ is consumed during photosynthesis.
+* O₂ is produced as a metabolic by-product.
+* Gas composition therefore serves as an indirect indicator of culture health and biological activity.
+
+---
+
+## Machine Learning Models
+
+Several regression algorithms were trained and evaluated for biomass prediction.
+
+### Best Performing Model
+
+| Model                   |  R² Score |
+| ----------------------- | --------: |
+| Random Forest Regressor | **0.986** |
+
+The Random Forest model achieved the highest predictive performance, exceeding previously reported benchmarks for this dataset.
+
+---
+
+## Project Workflow
+
+```text
+Raw Dataset
+      │
+      ▼
+Data Cleaning
+      │
+      ▼
+Exploratory Data Analysis
+      │
+      ▼
+Feature Engineering
+      │
+      ▼
+Correlation Analysis
+      │
+      ▼
+Model Training
+      │
+      ▼
+Performance Evaluation
+      │
+      ▼
+Biological Interpretation
+```
+
+---
+
+## Tech Stack
+
+* Python
+* NumPy
+* Pandas
+* Matplotlib
+* Scikit-learn
+* Jupyter Notebook
+
+---
+
+## Interactive Dashboard
+
+A complete interactive analysis, including visualizations, feature relationships, and model results, is available here:
+
+**https://bubblecolumnphotobioreactoroptimizer.streamlit.app**
+
+> **Note:** The application is hosted on Streamlit Community Cloud. If the app is asleep, simply click the **"Wake App"** button. It usually becomes available within **5–15 seconds**.
+
+---
+
+## Citation
+
+If you use this repository or the associated dataset, please cite the original publication:
+
+> *A comprehensive dataset of biomass and critical variables for Verrucodesmus verrucosus culture in bubble column photobioreactors.*
+
+Elsevier – *Data in Brief* (2025)
+
 https://www.sciencedirect.com/science/article/pii/S2352340925007279
 
-and lastly if you want detailed overview key insights along with the graphs of analysis done by me please visit - "https://bubblecolumnphotobioreactoroptimizer.streamlit.app" ( if the website is sleeping just press the button present in the centre website will be live in 5-15 seconds )
