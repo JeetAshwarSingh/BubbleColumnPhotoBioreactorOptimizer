@@ -179,7 +179,7 @@ Biological Interpretation
 
 ### Correlation Analysis
 
-![Correlation Matrix](images/CorrelationMatrix.png)
+![Correlation Matrix](Main/images/CorrelationMatrix.png)
 
 The correlation matrix highlights the relationships between process variables and biomass production. Nitrate (NO₃), oxygen (O₂), and carbon dioxide (CO₂) exhibit strong negative correlations with biomass, reflecting nutrient consumption and active photosynthetic metabolism during microalgal growth. In contrast, conductivity and pH show strong positive correlations, indicating favorable conditions for biomass accumulation.
 
@@ -189,13 +189,13 @@ The correlation matrix highlights the relationships between process variables an
 
 #### Elbow Method
 
-![Elbow Plot](images/Elbowplot.png)
+![Elbow Plot](Main/images/Elbowplot.png)
 
 The Elbow Method identifies the optimal number of clusters for the dataset. The within-cluster sum of squares decreases sharply until **K = 2**, after which the improvement becomes marginal. This indicates that the experimental observations naturally group into **two distinct clusters**, which were subsequently used for unsupervised analysis.
 
 #### Principal Component Analysis (PCA)
 
-![PCA Clusters](images/PcaCluster.png)
+![PCA Clusters](Main/images/PcaCluster.png)
 
 Principal Component Analysis (PCA) projects the multidimensional experimental data into two principal components for visualization. The resulting scatter plot clearly separates the data into **two distinct clusters**, suggesting the presence of different cultivation states or growth regimes within the experimental conditions.
 
@@ -203,7 +203,7 @@ Principal Component Analysis (PCA) projects the multidimensional experimental da
 
 ### Model Performance
 
-![Model Evaluation](images/ModelEvaluation.png)
+![Model Evaluation](Main/images/ModelEvaluation.png)
 
 Multiple regression models were evaluated for predicting biomass concentration. Among the tested algorithms, the **Random Forest Regressor** achieved the highest predictive performance with an **R² score of 0.986**, outperforming previously reported benchmarks on this dataset while maintaining low prediction error.
 
@@ -219,7 +219,7 @@ The fitting plot compares predicted biomass values against experimentally observ
 
 ### Residual Analysis
 
-![Residual Plot](images/ResidualPlot.png)
+![Residual Plot](Main/images/ResidualPlot.png)
 
 Residual analysis shows that prediction errors are randomly distributed around zero without any obvious systematic trend. This indicates that the model captures the underlying data structure effectively and does not exhibit significant bias or heteroscedasticity, supporting the reliability of the regression model.
 
