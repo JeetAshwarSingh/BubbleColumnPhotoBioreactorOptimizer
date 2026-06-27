@@ -173,6 +173,57 @@ Biological Interpretation
 
 ---
 
+---
+
+## Results
+
+### Correlation Analysis
+
+![Correlation Matrix](images/CorrelationMatrix.png)
+
+The correlation matrix highlights the relationships between process variables and biomass production. Nitrate (NO₃), oxygen (O₂), and carbon dioxide (CO₂) exhibit strong negative correlations with biomass, reflecting nutrient consumption and active photosynthetic metabolism during microalgal growth. In contrast, conductivity and pH show strong positive correlations, indicating favorable conditions for biomass accumulation.
+
+---
+
+### Cluster Analysis
+
+#### Elbow Method
+
+![Elbow Plot](images/Elbowplot.png)
+
+The Elbow Method identifies the optimal number of clusters for the dataset. The within-cluster sum of squares decreases sharply until **K = 2**, after which the improvement becomes marginal. This indicates that the experimental observations naturally group into **two distinct clusters**, which were subsequently used for unsupervised analysis.
+
+#### Principal Component Analysis (PCA)
+
+![PCA Clusters](images/PcaCluster.png)
+
+Principal Component Analysis (PCA) projects the multidimensional experimental data into two principal components for visualization. The resulting scatter plot clearly separates the data into **two distinct clusters**, suggesting the presence of different cultivation states or growth regimes within the experimental conditions.
+
+---
+
+### Model Performance
+
+![Model Evaluation](images/ModelEvaluation.png)
+
+Multiple regression models were evaluated for predicting biomass concentration. Among the tested algorithms, the **Random Forest Regressor** achieved the highest predictive performance with an **R² score of 0.986**, outperforming previously reported benchmarks on this dataset while maintaining low prediction error.
+
+---
+
+### Predicted vs. Actual Biomass
+
+![Fitting Plot](images/FittingPlot.png)
+
+The fitting plot compares predicted biomass values against experimentally observed measurements. The close agreement between predictions and actual values demonstrates the model's ability to accurately capture the underlying relationship between environmental variables and biomass production across the dataset.
+
+---
+
+### Residual Analysis
+
+![Residual Plot](images/ResidualPlot.png)
+
+Residual analysis shows that prediction errors are randomly distributed around zero without any obvious systematic trend. This indicates that the model captures the underlying data structure effectively and does not exhibit significant bias or heteroscedasticity, supporting the reliability of the regression model.
+
+
 ## Tech Stack
 
 * Python
