@@ -223,6 +223,21 @@ The fitting plot compares predicted biomass values against experimentally observ
 
 Residual analysis shows that prediction errors are randomly distributed around zero without any obvious systematic trend. This indicates that the model captures the underlying data structure effectively and does not exhibit significant bias or heteroscedasticity, supporting the reliability of the regression model.
 
+### Performance Comparison with Published Baselines
+
+The original study evaluated several regression models for biomass prediction. This project extends that work by implementing additional machine learning algorithms and comparing their predictive performance.
+
+| Model                                   |        R² |
+| --------------------------------------- | --------: |
+| Multiple Linear Regression              |     0.941 |
+| Polynomial Regression (Degree 2)        |     0.880 |
+| Polynomial Regression (Degree 3)        |     0.894 |
+| Gaussian Regression                     |     0.936 |
+| **Random Forest Regressor (This Work)** | **0.986** |
+
+The **Random Forest Regressor** achieved an **R² score of 0.986**, outperforming the best baseline model reported in the original study (**Multiple Linear Regression, R² = 0.941**).
+
+This represents an improvement of approximately **4.8 percentage points in R²** (0.986 vs. 0.941), demonstrating that ensemble learning methods can more effectively capture the nonlinear relationships between environmental variables and microalgal biomass production.
 
 ## Tech Stack
 
